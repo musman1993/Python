@@ -1,7 +1,15 @@
 
-text = """Interesting facts about the Moon. The Moon is Earth's only satellite. There are several interesting facts about the Moon and how it affects life here on Earth. 
-On average, the Moon moves 4cm away from the Earth every year. This yearly drift is not significant enough to cause immediate effects on Earth. The highest daylight temperature of the Moon is 127 C."""
+    # Draw current shape
+    for row in range(len(current_shape)):
+        for col in range(len(current_shape[0])):
+            if current_shape[row][col]:
+                pygame.draw.rect(screen, current_color, (current_x + col * CELL_SIZE, current_y + row * CELL_SIZE, CELL_SIZE, CELL_SIZE))
 
-sentence = text.split('. ')
+    # Update display
+    pygame.display.flip()
 
-print = sentence
+    # Cap the frame rate
+    clock.tick(10)
+
+# Quit pygame
+pygame.quit()
